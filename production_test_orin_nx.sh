@@ -143,9 +143,9 @@ function test_menu {
 				;;
 			7 )
 				echo "CSI Test"
-				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_1_nx.sh
+				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_1_orin_nx.sh
 				sleep 2
-				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_2_nx.sh
+				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_2_orin_nx.sh
 				;;
 			8 )
 				echo "Key-E Test"
@@ -154,47 +154,47 @@ function test_menu {
 				;;
 			9 )
 				echo "Key-B Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_key_b_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_key_b_orin_nx.sh
 				;;
 			10 )
 				echo "RS232 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_orin_nx.sh $board_rev_1_2
 				;;
 			11 )
 				echo "RS422 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_orin_nx.sh $board_rev_1_2
 				;;
 			12 )
 				echo "RS485 Write Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_orin_nx.sh $board_rev_1_2
 				;;
 			13 )
 				echo "RS485 Read Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_orin_nx.sh $board_rev_1_2
 				;;
 			14 )
 				echo "CANBus Transmit Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_transmit_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_transmit_orin_nx.sh
 				;;
 			15 )
 				echo "CANBus Receive Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_receive_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_receive_orin_nx.sh
 				;;
 			16 )
 				echo "Digital Out Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_orin_nx.sh
 				;;
 			17 )
 				echo "Digital In-0 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_orin_nx.sh
 				;;
 			18 )
 				echo "Digital In-1 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_orin_nx.sh
 				;;
 			[Qq]* )
 				echo "Quitting ..."
