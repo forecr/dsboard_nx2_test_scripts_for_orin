@@ -107,7 +107,11 @@ function test_menu {
 		case $choice in
 			1 ) 
 				echo "* Check The power button"
-				echo "* Set the device in recovery mode, connect recovery USB and check the device in recovery mode with lsusb (0955:7323)"
+				echo "* Set the device in recovery mode, connect recovery USB and check the device in recovery mode with lsusb"
+				echo "*     0955:7323 for Orin NX 16GB"
+				echo "*     0955:7423 for Orin NX 8GB"
+				echo "*     0955:7523 for Orin Nano 8GB"
+				echo "*     0955:7623 for Orin Nano 4GB"
 				echo "* Reset the device, connect Debug USB and check the serial connection"
 				;;
 			2 )
@@ -143,9 +147,9 @@ function test_menu {
 				;;
 			7 )
 				echo "CSI Test"
-				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_1_orin_nx.sh
+				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_1_orin.sh
 				sleep 2
-				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_2_orin_nx.sh
+				gnome-terminal -- $SCRIPTS_FOLDER/test_csi_2_orin.sh
 				;;
 			8 )
 				echo "Key-E Test"
@@ -154,47 +158,47 @@ function test_menu {
 				;;
 			9 )
 				echo "Key-B Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_key_b_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_key_b_orin.sh
 				;;
 			10 )
 				echo "RS232 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_orin_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_orin.sh $board_rev_1_2
 				;;
 			11 )
 				echo "RS422 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_orin_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_orin.sh $board_rev_1_2
 				;;
 			12 )
 				echo "RS485 Write Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_orin_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_orin.sh $board_rev_1_2
 				;;
 			13 )
 				echo "RS485 Read Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_orin_nx.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_orin.sh $board_rev_1_2
 				;;
 			14 )
 				echo "CANBus Transmit Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_transmit_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_transmit_orin.sh
 				;;
 			15 )
 				echo "CANBus Receive Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_receive_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_can_receive_orin.sh
 				;;
 			16 )
 				echo "Digital Out Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_orin.sh
 				;;
 			17 )
 				echo "Digital In-0 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_orin.sh
 				;;
 			18 )
 				echo "Digital In-1 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_orin_nx.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_orin.sh
 				;;
 			[Qq]* )
 				echo "Quitting ..."
