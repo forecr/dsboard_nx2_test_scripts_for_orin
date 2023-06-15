@@ -6,8 +6,7 @@ if [ "$(whoami)" != "root" ] ; then
 fi
 
 # Check the board revision
-board_rev_1_2=false
-
+board_rev_1_23=true
 
 # Check the scipts' folder
 SCRIPTS_FOLDER=${PWD}
@@ -163,22 +162,22 @@ function test_menu {
 			10 )
 				echo "RS232 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_orin.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs232_orin.sh $board_rev_1_23
 				;;
 			11 )
 				echo "RS422 Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_orin.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs422_orin.sh $board_rev_1_23
 				;;
 			12 )
 				echo "RS485 Write Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_orin.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_write_orin.sh $board_rev_1_23
 				;;
 			13 )
 				echo "RS485 Read Test"
 				check_nvgetty_service
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_orin.sh $board_rev_1_2
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_rs485_read_orin.sh $board_rev_1_23
 				;;
 			14 )
 				echo "CANBus Transmit Test"
@@ -190,15 +189,15 @@ function test_menu {
 				;;
 			16 )
 				echo "Digital Out Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_orin.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_out_multi_orin.sh $board_rev_1_23
 				;;
 			17 )
 				echo "Digital In-0 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_orin.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in0_orin.sh $board_rev_1_23
 				;;
 			18 )
 				echo "Digital In-1 Test"
-				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_orin.sh
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_digital_in1_orin.sh $board_rev_1_23
 				;;
 			[Qq]* )
 				echo "Quitting ..."
