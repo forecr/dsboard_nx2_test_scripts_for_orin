@@ -115,7 +115,7 @@ function test_menu {
 				echo "* Reset the device, connect Debug USB and check the serial connection"
 				;;
 			2 )
-				echo "Check M.2 SSD and SD card detected"
+				echo "Check M.2 SSD detected"
 				gnome-terminal -- gnome-disks
 				;;
 			3 )
