@@ -5,6 +5,13 @@ if [ "$(whoami)" != "root" ] ; then
 	exit 1
 fi
 
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+RED='\033[0;31m'          # Red
+YELLOW='\033[0;33m'       # Yellow
+GREEN='\033[0;32m'        # Green
+COLOR_OFF='\033[0m'       # Text Reset
+
 # Check the board revision
 board_rev_1_23=true
 
@@ -115,6 +122,7 @@ function test_menu {
 				echo "* Reset the device, connect Debug USB and check the serial connection"
 				;;
 			2 )
+				echo -e "${RED}Unsupported interface: SD Card${COLOR_OFF}"
 				echo "Check M.2 SSD detected"
 				gnome-terminal -- gnome-disks
 				;;
