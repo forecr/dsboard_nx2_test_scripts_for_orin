@@ -24,7 +24,7 @@ if $BOARD_REV_1_23; then
 fi
 
 gpioset --mode=signal $RS485_CTRL=$RS485_CTRL_VAL &
-$PID_RS485_CTRL=$!
+PID_RS485_CTRL=$!
 gpioset --mode=signal $HALF_FULL=$HALF_FULL_VAL &
 PID_HALF_FULL=$!
 gpioset --mode=signal $RS422_232=$RS422_232_VAL &
