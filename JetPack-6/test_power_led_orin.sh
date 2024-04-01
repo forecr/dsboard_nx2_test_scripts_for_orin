@@ -31,7 +31,7 @@ function run_gpioset_out {
 	kill_gpioset_bg $1 $2
 
 	# Run the gpioset command in background (to keep the GPIO value continuously)
-	gpioset --mode=signal $1 $2=$3 &
+	gpioset --mode=time -u 500000 $1 $2=$3 &
 }
 
 #gpiochip2 - pcf8574a
