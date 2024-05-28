@@ -30,13 +30,9 @@ PID_HALF_FULL=$!
 gpioset --mode=signal $RS422_232=$RS422_232_VAL &
 PID_RS422_232=$!
 
-trap interrupt_func INT
-interrupt_func() {
-	kill $PID_RS422_232
-	kill $PID_HALF_FULL
-	kill $PID_RS485_CTRL
-}
+sudo gtkterm -p /dev/ttyTHS1 -s 115200 -w RS485
 
-sudo gtkterm -p /dev/ttyTHS0 -s 115200 -w RS485
-
+kill $PID_RS422_232
+kill $PID_HALF_FULL
+kill $PID_RS485_CTRL
 
