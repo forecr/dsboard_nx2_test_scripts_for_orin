@@ -27,11 +27,8 @@ function run_gpioset_out {
 	# $2 -> GPIO index
 	# $3 -> output value
 
-	# If there is a gpioset command is working in background (for the selected GPIO), kill it
-	kill_gpioset_bg $1 $2
-
-	# Run the gpioset command in background (to keep the GPIO value continuously)
-	gpioset --mode=signal $1 $2=$3 &
+	# Run the gpioset command
+	gpioset $1 $2=$3
 }
 
 #gpiochip2 - pcf8574a
@@ -57,6 +54,8 @@ echo "DIGITAL_OUT1 OFF"
 run_gpioset_out $OUT1_PIN=0
 echo "DIGITAL_OUT2 OFF"
 run_gpioset_out $OUT2_PIN=0
+
+sleep $sleep_time
 
 #Single Test
 echo "step: 1/14"
