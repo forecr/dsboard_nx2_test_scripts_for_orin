@@ -135,6 +135,7 @@ function test_menu {
 		echo "17) Digital In-0 Test"
 		echo "18) Digital In-1 Test"
 		echo "19) Power LED Test"
+		echo "20) Fan Test"
 		read -p "Type the test number (or quit) [1/.../q]: " choice
 		echo ""
 
@@ -239,6 +240,10 @@ function test_menu {
 			19 )
 				echo "Power LED Test"
 				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_power_led_orin.sh $board_rev_1_23
+				;;
+			20 )
+				echo "Fan Test"
+				sudo gnome-terminal -- $SCRIPTS_FOLDER/test_fan.sh
 				;;
 			[Qq]* )
 				echo "Quitting ..."
